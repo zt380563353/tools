@@ -1,0 +1,20 @@
+import csv
+import os
+
+# 获取告警名称配置文件
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+filename = os.path.join(BASE_DIR, '中兴9908告警码.csv')
+
+
+def csv_to_dict(csv_name):
+    data = []
+    with open(csv_name, encoding='utf-8-sig') as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+
+            data.append({row['warning_code']: row})
+    return data
+
+
+row_list = csv_to_dict(filename)
+print(row_list)
