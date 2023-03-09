@@ -7,14 +7,14 @@ filename = os.path.join(BASE_DIR, 'warning.csv')
 
 
 def csv_to_dict(csv_name):
-    data = []
+    data = {}
     with open(csv_name, encoding='utf-8-sig') as csv_file:
         reader = csv.DictReader(csv_file)
         for row in reader:
 
-            data.append({row['warning_code']: row})
+            data[row['warning_code']] = row
     return data
 
 
-row_list = csv_to_dict(filename)
-print(row_list)
+row_dict = csv_to_dict(filename)
+print(row_dict)
