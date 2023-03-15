@@ -1,5 +1,3 @@
-
-
 def read_config():
     last_time_dict = {}
     with open('oid_value.conf', 'r') as f:

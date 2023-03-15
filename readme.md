@@ -1,0 +1,2 @@
+- 读config文件为dict
+- 读csv文件为dict
